@@ -1,0 +1,30 @@
+{
+  "name": "capability-stem",
+  "version": "0.0.0",
+  "description": "Capability stem enabling capabilities in GET HTTPS requests.",
+  "scripts": {
+    "build": "browserify browser.js > public/browser.js",
+    "inject-examples": "node scripts/injectExamples.js",
+    "readme": "npm run build && node examples/readme.js"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "concat-stream": "1.4.6"
+  },
+  "devDependencies": {
+    "browserify": "6.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tristanls/capability-stem.git"
+  },
+  "keywords": [
+    "capability",
+    "security",
+    "ocap",
+    "browser",
+    "https"
+  ],
+  "author": "Tristan Slominski <tristan.slominski@gmail.com>",
+  "license": "MIT"
+}
