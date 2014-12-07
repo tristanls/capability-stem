@@ -37,12 +37,12 @@ var https = require('https');
 function stem(window, document) {
     var options = {
         headers: {
-            // hash starts with '#'
+            // slice(1) removes leading '#' in hash
             'Authorization': 'Bearer ' + window.location.hash.slice(1)
         },
         hostname: window.location.hostname,
         port: window.location.port,
-        path: '/',
+        path: window.location.pathname + window.location.search,
         method: 'POST'
     };
 
@@ -54,7 +54,6 @@ function stem(window, document) {
         res.pipe(html);
     });
 
-    req.write(window.location.search);
     req.end();
 };
 

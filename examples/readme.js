@@ -66,6 +66,8 @@ stemServer.on('request', function (capability, req, res) {
     }
 
     console.log('received valid request...');
+    console.log(req.url);
+    console.dir(req.headers);
     res.writeHead(200, {'Content-Type': 'text/html'});
     fs.createReadStream(
         path.normalize(path.join(__dirname, 'readme', 'content.html')))

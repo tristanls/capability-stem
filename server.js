@@ -109,6 +109,7 @@ Server.prototype.listen = function listen(callback) {
         }
 
         // serve /browser.js
+        // TODO: remove this, in real implementation this comes from a CDN
         if (parsedUrl.pathname.match(/^\/browser.js$/)) {
             res.writeHead(200, {'Content-Type': 'text/javascript'});
             fs.createReadStream(
