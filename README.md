@@ -2,7 +2,7 @@
 
 _Stability: 1 - [Experimental](https://github.com/tristanls/stability-index#stability-1---experimental)_
 
-[![NPM version](https://badge.fury.io/js/capability-stem.png)](http://npmjs.org/package/capability-stem)
+[![NPM version](https://img.shields.io/npm/v/capability-stem.svg?style=flat-square)](http://npmjs.org/package/capability-stem) [![License](https://img.shields.io/npm/l/capability-stem.svg?style=flat-square)](https://github.com/tristanls/capability-stem/blob/master/LICENSE) [![Issues](https://img.shields.io/github/issues/badges/capability-stem.svg?style=flat-square)](https://github.com/tristanls/capability-stem/issues)
 
 Capability stem enabling capabilities in GET HTTPS requests.
 
@@ -64,6 +64,8 @@ stemServer.on('request', function (capability, req, res) {
     }
 
     console.log('received valid request...');
+    console.log(req.url);
+    console.dir(req.headers);
     res.writeHead(200, {'Content-Type': 'text/html'});
     fs.createReadStream(
         path.normalize(path.join(__dirname, 'readme', 'content.html')))
