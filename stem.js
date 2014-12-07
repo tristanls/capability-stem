@@ -1,6 +1,6 @@
 /*
 
-browser.js
+stem.js
 
 The MIT License (MIT)
 
@@ -31,16 +31,31 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 "use strict";
 
-var concat = require('concat-stream');
-var stem = require('./stem.js');
+var https = require('https');
+var store = require('store');
 
-function bootstrap(window, document) {
-    stem('authorization', function (res) {
-        var html = concat(function (data) {
-            document.body.innerHTML = data;
-        });
-        res.pipe(html);
-    }, window, document);
+module.exports = function stem(name, handler, window, document) {
+    // first, check if the browser has the capability already stored
+    var capability = store.get(name);
+
+    // capability in the URI always takes precedence
+    if (window.location.hash) {
+        // slice(1) removes leading '#' in hash
+        capability = window.location.hash.slice(1);
+        store.set(name, capability);
+    }
+
+    var options = {
+        headers: {
+            'Authorization': 'Bearer ' + capability
+        },
+        hostname: window.location.hostname,
+        port: window.location.port,
+        path: window.location.pathname + window.location.search,
+        method: 'POST'
+    };
+
+    var req = https.request(options);
+    req.on('response', handler);
+    req.end();
 };
-
-bootstrap(window, document);
