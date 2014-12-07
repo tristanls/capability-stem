@@ -9,7 +9,8 @@
   },
   "main": "server.js",
   "dependencies": {
-    "concat-stream": "1.4.6"
+    "concat-stream": "1.4.6",
+    "store": "1.3.17"
   },
   "devDependencies": {
     "browserify": "6.3.2"

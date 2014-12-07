@@ -49,6 +49,7 @@ var stemServer = StemServer.listen({
 stemServer.on('listening', function () {
     console.log('server listening on https://localhost:4443');
     console.log('   ...try visiting https://localhost:4443/#' + EXAMPLE_CAPABILITY);
+    console.log('   ...then visit just https://localhost:4443 in another tab');
     console.log('');
     console.log('Ctrl+C to exit');
 });

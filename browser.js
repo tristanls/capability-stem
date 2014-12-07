@@ -33,12 +33,22 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 var concat = require('concat-stream');
 var https = require('https');
+var store = require('store');
 
 function stem(window, document) {
+    // first, check if the browser has authorization already stored
+    var authorization = store.get('authorization');
+
+    // capability in the URI always takes precedence as authorization
+    if (window.location.hash) {
+        // slice(1) removes leading '#' in hash
+        authorization = window.location.hash.slice(1);
+        store.set('authorization', authorization);
+    }
+
     var options = {
         headers: {
-            // slice(1) removes leading '#' in hash
-            'Authorization': 'Bearer ' + window.location.hash.slice(1)
+            'Authorization': 'Bearer ' + authorization
         },
         hostname: window.location.hostname,
         port: window.location.port,
