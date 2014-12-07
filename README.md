@@ -2,7 +2,7 @@
 
 _Stability: 1 - [Experimental](https://github.com/tristanls/stability-index#stability-1---experimental)_
 
-[![NPM version](https://img.shields.io/npm/v/capability-stem.svg?style=flat-square)](http://npmjs.org/package/capability-stem) [![License](https://img.shields.io/npm/l/capability-stem.svg?style=flat-square)](https://github.com/tristanls/capability-stem/blob/master/LICENSE) [![Issues](https://img.shields.io/github/issues/badges/capability-stem.svg?style=flat-square)](https://github.com/tristanls/capability-stem/issues)
+[![NPM version](https://img.shields.io/npm/v/capability-stem.svg?style=flat-square)](http://npmjs.org/package/capability-stem) [![License](https://img.shields.io/npm/l/capability-stem.svg?style=flat-square)](https://github.com/tristanls/capability-stem/blob/master/LICENSE) [![Issues](https://img.shields.io/github/issues/badges/capability-stem.svg?style=flat-square)](https://github.com/tristanls/capability-stem/issues) [![Downloads](https://img.shields.io/npm/dm/capability-stem.svg?style=flat-square)](https://www.npmjs.org/package/capability-stem)
 
 Capability stem enabling capabilities in GET HTTPS requests.
 
