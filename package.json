@@ -1,6 +1,6 @@
 {
   "name": "capability-stem",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Capability stem enabling capabilities in GET HTTPS requests.",
   "scripts": {
     "build": "browserify browser.js | uglifyjs - > public/browser.js",
